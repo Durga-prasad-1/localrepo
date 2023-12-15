@@ -168,7 +168,7 @@ input{
             <div id="Sign"><a href="./register.html">Sign Up</a></div>
         </div>
         <div class="form">
-            <form >
+            <form onsubmit="return validateForm()">
                 <div id="username">
                     <label for="name">Enter Username:</label>
                     <input id="user"  type="text" placeholder="Username" name="user">
@@ -194,5 +194,20 @@ input{
         </div>
     </div>
 </div>
+<script>
+    function validateForm() {
+            // Get the password value
+            var password = document.getElementById("pass").value;
+
+            // Your password validation logic (for example, minimum length)
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters long");
+                return false; // Prevent form submission
+            }
+
+            // If password passes validation, allow form submission
+            return true;
+        }
+</script>
 </body>
 </html>
